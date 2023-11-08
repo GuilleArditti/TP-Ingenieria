@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal Turístico</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
+
 <body>
     <header>
         <h1>Portal Turístico</h1>
@@ -16,38 +20,90 @@
                 <li><a href="#aviso_producto">Aviso de Productos</a></li>
                 <li><a href="#busqueda_comercios">Búsqueda de Comercios</a></li>
             </ul>
+            <!-- Agregar un botón para abrir el modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#avisoModal">
+                Publicar Aviso
+            </button>
+
         </nav>
     </header>
-    
+
     <section id="sitios_interes">
         <h2>Consulta de Sitios de Interés y Atractivos Turísticos</h2>
         <!-- Contenido de la funcionalidad -->
     </section>
-    
+
     <section id="centros_asistencia">
         <h2>Consulta de Centros y Móviles de Asistencia</h2>
         <!-- Contenido de la funcionalidad -->
     </section>
-    
+
     <section id="aviso_producto">
         <h2>Avisos de Productos</h2>
         <!-- Contenido de la funcionalidad -->
     </section>
-    
+
     <section id="busqueda_comercios">
         <h2>Comercios</h2>
         <!-- Contenido de la funcionalidad -->
     </section>
-    
+
     <section id="consulta_productos">
         <h2>Consulta de Productos</h2>
         <!-- Contenido de la funcionalidad -->
     </section>
 
     <div class="cotizacion">Dolar: $930</div>
-    
+
     <footer>
         <p>&copy; 2023 Portal Turístico</p>
     </footer>
+
+    <!-- Modal para publicar un aviso -->
+    <div class="modal fade" id="avisoModal" tabindex="-1" role="dialog" aria-labelledby="avisoModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="avisoModalLabel">Publicar Aviso</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" class="form-control" id="nombre" placeholder="Nombre del aviso">
+                        </div>
+                        <div class="form-group">
+                            <label for="tipo">Tipo de Publicación:</label>
+                            <input type="text" class="form-control" id="tipo" placeholder="Tipo de publicación">
+                        </div>
+                        <div class="form-group">
+                            <label for="precio">Precio:</label>
+                            <input type="number" class="form-control" id="precio" placeholder="Precio">
+                        </div>
+                        <div class="form-group">
+                            <button type="button" class="btn btn-outline-info" id="btn-sugerir-precio" onclick="sugerirPrecio()" disabled>Sugerir precio</button>
+                            <span id="txt-sugerir-precio"></span>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" id="publicarBtn">Publicar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="./index.js"></script>
+
 </body>
+
 </html>
