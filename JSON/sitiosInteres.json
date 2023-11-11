@@ -1,0 +1,18 @@
+[
+    {
+      "id": 1,
+      "descripcion": "Catedral de San Carlos de Bariloche",
+      "foto": "Images/catedral.jpg"
+    },
+    {
+      "id": 2,
+      "descripcion": "Cerro Catedral",
+      "foto": "Images/cerro.jpg"
+    },
+    {
+      "id": 3,
+      "descripcion": "Lago Nahuel Huapi",
+      "foto": "Images/lago.jpg"
+    }
+  ]
+  

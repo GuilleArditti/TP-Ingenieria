@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Turístico - Bariloche</title>
+    <link rel="stylesheet" href="sitiosInteres-Atractivos.css"> <!-- Modifica esta línea -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="sitiosInteres-Atractivos.js"></script> <!-- Ajusta el nombre del archivo JS si es necesario -->
+</head>
+
+<body>
+
+    <h2>Consulta de Sitios de Interés y Atractivos Turísticos en Bariloche</h2>
+
+    <div id="sitios-container"></div>
+
+    <script>
+        $(document).ready(function () {
+            // Realizar una solicitud Ajax para obtener sitios de interés
+            $.ajax({
+                url: 'JSON/sitiosInteres.json', // Ajusta la ruta según tu estructura de carpetas
+                type: 'GET',
+                dataType: 'json',
+                success: function (sitiosData) {
+                    var sitiosContainer = $('#sitios-container');
+
+                    // Iterar sobre los sitios de interés y mostrarlos en la página
+                    $.each(sitiosData, function (index, sitio) {
+                        var sitioHTML = '<div class="sitio">';
+                        sitioHTML += '<h3>' + sitio.descripcion + '</h3>';
+                        sitioHTML += '<img src="' + sitio.foto + '" alt="' + sitio.descripcion + '" width="300">';
+                        sitioHTML += '<div class="atractivos-container" id="atractivos-container-' + sitio.id + '"></div>';
+                        sitioHTML += '</div>';
+
+                        sitiosContainer.append(sitioHTML);
+                    });
+
+                    // Después de agregar los sitios, realizar una solicitud Ajax para obtener los atractivos
+                    $.ajax({
+                        url: 'JSON/atractivos.json', // Ajusta la ruta según tu estructura de carpetas
+                        type: 'GET',
+                        dataType: 'json',
+                        success: function (atractivosData) {
+                            // Iterar sobre los atractivos y asignarlos a los contenedores correspondientes
+                            $.each(atractivosData, function (index, atractivo) {
+                                var atractivosContainer = $('#atractivos-container-' + atractivo.sitio_id);
+
+                                var atractivoHTML = '<div class="atractivo">';
+                                atractivoHTML += '<h4>' + atractivo.nombre + '</h4>';
+                                atractivoHTML += '<p>' + atractivo.resumen + '</p>';
+                                atractivoHTML += '<img src="' + atractivo.foto + '" alt="' + atractivo.nombre + '" width="200">';
+                                atractivoHTML += '</div>';
+
+                                atractivosContainer.append(atractivoHTML);
+                            });
+                        },
+                        error: function (error) {
+                            console.log('Error al cargar los datos de atractivos:', error);
+                        }
+                    });
+                },
+                error: function (error) {
+                    console.log('Error al cargar los datos de sitios de interés:', error);
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
