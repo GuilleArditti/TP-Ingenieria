@@ -1,24 +1,45 @@
 [
-    {
+  {
       "id": 1,
       "sitio_id": 1,
       "nombre": "Vitraux de la Catedral",
       "resumen": "Los vitraux de la catedral son una obra de arte impresionante.",
       "foto": "Images/vitraux.jpg"
-    },
-    {
+  },
+
+  {
       "id": 2,
       "sitio_id": 2,
       "nombre": "Teleférico Cerro Catedral",
       "resumen": "Un emocionante viaje en teleférico que ofrece vistas panorámicas.",
       "foto": "Images/teleferico.jpg"
-    },
-    {
+  },
+  {
       "id": 3,
+      "sitio_id": 2,
+      "nombre": "Senderismo en Cerro Catedral",
+      "resumen": "Explora rutas de senderismo con vistas espectaculares.",
+      "foto": "Images/senderismo.jpg"
+  },
+  {
+      "id": 4,
       "sitio_id": 3,
       "nombre": "Navegación en el Nahuel Huapi",
       "resumen": "Disfruta de un paseo en barco por las aguas cristalinas del lago.",
       "foto": "Images/navegacion.jpg"
-    }
-  ]
-  
+  },
+  {
+      "id": 5,
+      "sitio_id": 3,
+      "nombre": "Pesca en el Nahuel Huapi",
+      "resumen": "Una experiencia única de pesca en el lago Nahuel Huapi.",
+      "foto": "Images/pesca.jpg"
+  },
+  {
+    "id": 6,
+    "sitio_id": 1,
+    "nombre": "Altar Principal",
+    "resumen": "Descubre el impresionante altar principal de la Catedral.",
+    "foto": "Images/altar.jpg"
+  }
+]

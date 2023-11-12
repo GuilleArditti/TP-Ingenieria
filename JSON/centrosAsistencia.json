@@ -1,0 +1,26 @@
+[
+    {
+        "nombre": "Hospital Zonal Bariloche",
+        "direccion": "12 de Octubre 625, San Carlos de Bariloche",
+        "telefono": "+54 294 442-3202",
+        "horario": "Atención 24 horas",
+        "coordenadaX": -41.145632,
+        "coordenadaY": -71.309270
+    },
+    {
+        "nombre": "Centro Médico Nahuel Huapi",
+        "direccion": "Av. Bustillo 781, San Carlos de Bariloche",
+        "telefono": "+54 294 442-5678",
+        "horario": "Lunes a viernes: 8:00 - 18:00",
+        "coordenadaX": -41.138090,
+        "coordenadaY": -71.305375
+    },
+    {
+        "nombre": "Clinica San Francisco",
+        "direccion": "Av. 12 de Octubre 456, San Carlos de Bariloche",
+        "telefono": "+54 294 443-9876",
+        "horario": "Lunes a sábado: 9:00 - 20:00",
+        "coordenadaX": -41.148276,
+        "coordenadaY": -71.308918
+    }
+]
