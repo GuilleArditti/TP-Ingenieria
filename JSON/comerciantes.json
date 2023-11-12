@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "comercio_id": [1, 2],
+    "nombre": "Ana Rodríguez",
+    "dni": "30.123.456",
+    "email": "ana.rodriguez@gmail.com",
+    "telefono": "+54 9 294 1112233"
+},
+    {
+      "id": 2,
+      "comercio_id": 3,  
+      "nombre": "Juan Pérez",
+      "dni": "30.987.654",
+      "email": "juan.perez@gmail.com",
+      "telefono": "+54 9 294 4445555"
+    },
+    {
+      "id": 3,
+      "comercio_id": 4,  
+      "nombre": "María Gutiérrez",
+      "dni": "30.111.222",
+      "email": "maria.gutierrez@gmail.com",
+      "telefono": "+54 9 294 7778888"
+    }
+  ]
+  
