@@ -1,0 +1,86 @@
+[
+    {
+        "id": 1,
+        "fechaPublicacion": "2023-11-12",
+        "precio": 1134.99,
+        "idProducto": 1,
+        "idComercio": 1
+    },
+    {
+        "id": 2,
+        "fechaPublicacion": "2023-11-12",
+        "precio": 1119.99,
+        "idProducto": 2,
+        "idComercio": 1
+    },
+    {
+        "id": 3,
+        "fechaPublicacion": "2023-11-12",
+        "precio": 1189.99,
+        "idProducto": 3,
+        "idComercio": 1
+    },
+    {
+        "id": 4,
+        "fechaPublicacion": "2023-11-12",
+        "precio": 549.99,
+        "idProducto": 4,
+        "idComercio": 2
+    },
+    {
+        "id": 5,
+        "fechaPublicacion": "2023-11-12",
+        "precio": 599.99,
+        "idProducto": 5,
+        "idComercio": 2
+    },
+    {
+        "id": 6,
+        "fechaPublicacion": "2023-11-12",
+        "precio": 999.99,
+        "idProducto": 6,
+        "idComercio": 2
+    },
+    {
+        "id": 7,
+        "fechaPublicacion": "2023-11-12",
+        "precio": 4214.99,
+        "idProducto": 7,
+        "idComercio": 3
+    },
+    {
+        "id": 8,
+        "fechaPublicacion": "2023-11-12",
+        "precio": 4369.99,
+        "idProducto": 8,
+        "idComercio": 3
+    },
+    {
+        "id": 9,
+        "fechaPublicacion": "2023-11-12",
+        "precio": 3436.99,
+        "idProducto": 9,
+        "idComercio": 3
+    },
+    {
+        "id": 10,
+        "fechaPublicacion": "2023-11-12",
+        "precio": 2517.99,
+        "idProducto": 10,
+        "idComercio": 4
+    },
+    {
+        "id": 11,
+        "fechaPublicacion": "2023-11-12",
+        "precio": 2149.99,
+        "idProducto": 11,
+        "idComercio": 4
+    },
+    {
+        "id": 12,
+        "fechaPublicacion": "2023-11-12",
+        "precio": 5678.99,
+        "idProducto": 12,
+        "idComercio": 4
+    }
+]

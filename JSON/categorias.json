@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "descripcion": "Indumentaria"
+    },
+    {
+        "id": 2,
+        "descripcion": "Comidas"
+    },
+    {
+        "id": 3,
+        "descripcion": "Librería"
+    }
+]

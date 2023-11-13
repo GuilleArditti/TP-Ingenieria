@@ -1,0 +1,94 @@
+/* Estilo general para el contenedor de avisos */
+#avisos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: #f2f5f8;
+    padding: 20px;
+}
+
+/* Estilo para cada elemento de aviso */
+.item {
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 15px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.2);
+}
+
+/* Estilo para el título de cada aviso */
+.item p strong {
+    color: #007bff;
+}
+
+/* Estilo para las imágenes de productos */
+.item img {
+    max-width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+
+/* Estilo para el tipo de producto */
+.item p strong:first-child {
+    font-size: 1.2em;
+    color: #004080;
+}
+
+
+
+h1 {
+    text-align: center;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    margin-top: 0;
+}
+
+/* Estilo para el botón "Ver Comercio" */
+.ver-comercio-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.ver-comercio-btn:hover {
+    background-color: #4085cf; 
+}
+
+/* Estilo para los detalles del comercio */
+#detalles-comercio {
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 15px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(40, 167, 69, 0.2);
+}
+
+#detalles-comercio p {
+    margin: 0;
+    padding: 5px 0;
+}
+
+#detalles-comercio button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}

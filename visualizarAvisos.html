@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="CSS/visualizarAvisos.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <title>Visualizar Avisos</title>
+</head>
+
+<body>
+    <h1>Avisos</h1>
+
+    <label for="filtroComercio">Filtrar por Comercio:</label>
+    <select id="filtroComercio">
+    </select>
+
+    <label for="filtroCategoria">Filtrar por Categoría:</label>
+    <select id="filtroCategoria">
+    </select>
+
+    <div id="avisos-container"></div>
+
+    <div id="detalles-comercio"></div>
+
+    <div id="map" style="height: 400px;"></div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="JS/avisos.js"></script>
+</body>
+
+</html>

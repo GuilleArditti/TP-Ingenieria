@@ -1,42 +1,46 @@
 [
-  {
-      "id": 1,
-      "nombre": "Tienda de Ropa Elegante",
-      "direccion": "Av. San Martín 123, Bariloche",
-      "telefono": "+54 294 1234567",
-      "coordenadaX": -41.133472,
-      "coordenadaY": -71.310278,
-      "foto": "Images/ropa.jpg",
-      "horario": "Lunes a Viernes: 10:00 AM - 8:00 PM, Sábado: 11:00 AM - 6:00 PM"
-  },
-  {
-      "id": 2,
-      "nombre": "Cafetería Aromas del Sur",
-      "direccion": "Calle Mitre 456, Bariloche",
-      "telefono": "+54 294 9876543",
-      "coordenadaX": -41.145123,
-      "coordenadaY": -71.305678,
-      "foto": "Images/cafeteria.jpg",
-      "horario": "Todos los días: 7:00 AM - 10:00 PM"
-  },
-  {
-      "id": 3,
-      "nombre": "Librería Letras Mágicas",
-      "direccion": "Av. Belgrano 789, Bariloche",
-      "telefono": "+54 294 5551234",
-      "coordenadaX": -41.138765,
-      "coordenadaY": -71.315678,
-      "foto": "Images/libreria.jpg",
-      "horario": "Lunes a Sábado: 9:00 AM - 7:00 PM"
-  },
-  {
-      "id": 4,
-      "nombre": "Pizzería La Rústica",
-      "direccion": "Calle Moreno 321, Bariloche",
-      "telefono": "+54 294 3337890",
-      "coordenadaX": -41.131234,
-      "coordenadaY": -71.312345,
-      "foto": "Images/pizzeria.jpg",
-      "horario": "Todos los días: 12:00 PM - 11:00 PM"
-  }
+    {
+        "id": 1,
+        "nombre": "Tienda de Ropa Elegante",
+        "direccion": "Av. San Martín 123, Bariloche",
+        "telefono": "+54 294 1234567",
+        "coordenadaX": -41.133472,
+        "coordenadaY": -71.310278,
+        "foto": "Images/ropa.jpg",
+        "horario": "Lunes a Viernes: 10:00 AM - 8:00 PM, Sábado: 11:00 AM - 6:00 PM",
+        "idCategoria": 1
+    },
+    {
+        "id": 2,
+        "nombre": "Cafetería Aromas del Sur",
+        "direccion": "Calle Mitre 456, Bariloche",
+        "telefono": "+54 294 9876543",
+        "coordenadaX": -41.145123,
+        "coordenadaY": -71.305678,
+        "foto": "Images/cafeteria.jpg",
+        "horario": "Todos los días: 7:00 AM - 10:00 PM",
+        "idCategoria": 2
+    },
+    {
+        "id": 3,
+        "nombre": "Librería Letras Mágicas",
+        "direccion": "Av. Belgrano 789, Bariloche",
+        "telefono": "+54 294 5551234",
+        "coordenadaX": -41.138765,
+        "coordenadaY": -71.315678,
+        "foto": "Images/libreria.jpg",
+        "horario": "Lunes a Sábado: 9:00 AM - 7:00 PM",
+        "idCategoria": 3
+    },
+    {
+        "id": 4,
+        "nombre": "Pizzería La Rústica",
+        "direccion": "Calle Moreno 321, Bariloche",
+        "telefono": "+54 294 3337890",
+        "coordenadaX": -41.131234,
+        "coordenadaY": -71.312345,
+        "foto": "Images/pizzeria.jpg",
+        "horario": "Todos los días: 12:00 PM - 11:00 PM",
+        "idCategoria": 2
+    }
 ]

@@ -1,108 +1,51 @@
-// comercios.js
-
 document.addEventListener('DOMContentLoaded', function () {
     var mapa = L.map('mapa').setView([-41.133472, -71.310278], 13);
-
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '© OpenStreetMap contributors'
-    }).addTo(mapa);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap contributors' }).addTo(mapa);
 
     var marcadoresLayer = L.layerGroup().addTo(mapa);
+    var comerciosContainer = $('#comercios-container');
 
-    function mostrarComercios(comerciosData, comerciantesData) {
-        var comerciosContainer = $('#comercios-container');
+    function mostrarComercios(comercio, comerciante) {
+        var comercioHTML = `<div class="comercio">
+                              <img src="${comercio.foto}" alt="${comercio.nombre}">
+                              <div class="info">
+                                <h2>${comercio.nombre}</h2>
+                                <p>Dirección: ${comercio.direccion}</p>
+                                <p>Teléfono: ${comercio.telefono}${comercio.horario ? '<br>Horario: ' + comercio.horario : ''}</p>`;
 
-        comerciosData.forEach(comercio => {
-            var comerciante = encontrarComerciante(comercio.id, comerciantesData);
-            var comercioHTML = '<div class="comercio">';
-            comercioHTML += `<img src="${comercio.foto}" alt="${comercio.nombre}">`;
-            comercioHTML += '<div class="info">';
-            comercioHTML += `<h2>${comercio.nombre}</h2>`;
-            comercioHTML += `<p>Dirección: ${comercio.direccion}</p>`;
-            comercioHTML += `<p>Teléfono: ${comercio.telefono}</p>`;
+        comercioHTML += comerciante ? `<div class="comerciante">
+                                <h3>Comerciante: ${comerciante.nombre}</h3>
+                                <p>DNI: ${comerciante.dni}<br>Email: ${comerciante.email}<br>Teléfono: ${comerciante.telefono}</p>
+                              </div>` : '';
 
-            // Agregar horario si está definido
-            if (comercio.horario) {
-                comercioHTML += `<p>Horario: ${comercio.horario}</p>`;
-            }
+        comercioHTML += `<button class="boton-ver-mapa">Ver en Mapa</button>
+                        </div>
+                      </div>`;
 
-            if (comerciante) {
-                comercioHTML += '<div class="comerciante">';
-                comercioHTML += `<h3>Comerciante: ${comerciante.nombre}</h3>`;
-                comercioHTML += `<p>DNI: ${comerciante.dni}</p>`;
-                comercioHTML += `<p>Email: ${comerciante.email}</p>`;
-                comercioHTML += `<p>Teléfono: ${comerciante.telefono}</p>`;
-                comercioHTML += '</div>';
-            }
+        comerciosContainer.append(comercioHTML);
 
-            // Agregar botón "Ver en Mapa"
-            comercioHTML += `<button class="boton-ver-mapa">Ver en Mapa</button>`;
-            comercioHTML += '</div>';
-            comercioHTML += '</div>';
-            comerciosContainer.append(comercioHTML);
+        var marcador = L.marker([comercio.coordenadaX, comercio.coordenadaY]).addTo(marcadoresLayer);
+        var popupContent = `<b>${comercio.nombre}</b><br>Dirección: ${comercio.direccion}<br>Teléfono: ${comercio.telefono}${comercio.horario ? '<br>Horario: ' + comercio.horario : ''}`;
 
-            // Agregar marcador al mapa
-            var marcador = L.marker([comercio.coordenadaX, comercio.coordenadaY]).addTo(marcadoresLayer);
-            var popupContent = `<b>${comercio.nombre}</b><br>Dirección: ${comercio.direccion}<br>Teléfono: ${comercio.telefono}`;
-            if (comercio.horario) {
-                popupContent += `<br>Horario: ${comercio.horario}`;
-            }
-            if (comerciante) {
-                popupContent += `<br>Comerciante: ${comerciante.nombre}<br>DNI: ${comerciante.dni}<br>Email: ${comerciante.email}<br>Teléfono: ${comerciante.telefono}`;
-            }
-            marcador.bindPopup(popupContent);
+        popupContent += comerciante ? `<br>Comerciante: ${comerciante.nombre}<br>DNI: ${comerciante.dni}<br>Email: ${comerciante.email}<br>Teléfono: ${comerciante.telefono}` : '';
 
-            // Agregar evento al botón "Ver en Mapa"
-            var botonVerMapa = comerciosContainer.find('.boton-ver-mapa').last();
-            botonVerMapa.on('click', function () {
-                marcadoresLayer.clearLayers();
-                mapa.setView([comercio.coordenadaX, comercio.coordenadaY], 15);
+        marcador.bindPopup(popupContent);
 
-                var marcador = L.marker([comercio.coordenadaX, comercio.coordenadaY]).addTo(marcadoresLayer);
-                var popupContent = `<b>${comercio.nombre}</b><br>Dirección: ${comercio.direccion}<br>Teléfono: ${comercio.telefono}`;
-                if (comercio.horario) {
-                    popupContent += `<br>Horario: ${comercio.horario}`;
-                }
-                if (comerciante) {
-                    popupContent += `<br>Comerciante: ${comerciante.nombre}<br>DNI: ${comerciante.dni}<br>Email: ${comerciante.email}<br>Teléfono: ${comerciante.telefono}`;
-                }
-                marcador.bindPopup(popupContent);
-
-                // Desplazar hacia el contenedor del mapa
-                document.getElementById('mapa').scrollIntoView({ behavior: 'smooth' });
-            });
+        comerciosContainer.find('.boton-ver-mapa').last().on('click', function () {
+            marcadoresLayer.clearLayers();
+            mapa.setView([comercio.coordenadaX, comercio.coordenadaY], 15);
+            L.marker([comercio.coordenadaX, comercio.coordenadaY]).addTo(marcadoresLayer).bindPopup(popupContent);
+            document.getElementById('mapa').scrollIntoView({ behavior: 'smooth' });
         });
     }
 
     function encontrarComerciante(comercioId, comerciantesData) {
-        return comerciantesData.find(comerciante => {
-            if (Array.isArray(comerciante.comercio_id)) {
-                return comerciante.comercio_id.includes(comercioId);
-            } else {
-                return comerciante.comercio_id == comercioId;
-            }
-        });
+        return comerciantesData.find(comerciante => Array.isArray(comerciante.comercio_id) ? comerciante.comercio_id.includes(comercioId) : comerciante.comercio_id == comercioId);
     }
 
-    $.ajax({
-        url: 'JSON/comercios.json',
-        type: 'GET',
-        dataType: 'json',
-        success: function (comerciosData) {
-            $.ajax({
-                url: 'JSON/comerciantes.json',
-                type: 'GET',
-                dataType: 'json',
-                success: function (comerciantesData) {
-                    mostrarComercios(comerciosData, comerciantesData);
-                },
-                error: function (error) {
-                    console.log('Error al cargar los datos de comerciantes:', error);
-                }
-            });
-        },
-        error: function (error) {
-            console.log('Error al cargar los datos de comercios:', error);
-        }
+    $.getJSON('JSON/comercios.json', function (comerciosData) {
+        $.getJSON('JSON/comerciantes.json', function (comerciantesData) {
+            comerciosData.forEach(comercio => mostrarComercios(comercio, encontrarComerciante(comercio.id, comerciantesData)));
+        });
     });
 });
