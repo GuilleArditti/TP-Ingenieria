@@ -5,23 +5,14 @@ body {
     background-color: #f0f0f0;
 }
 
-h2 {
+h2, h3 {
     text-align: center;
     background-color: #007bff;
     color: #fff;
-    padding: 10px; 
-    margin-top: 0; 
+    padding: 10px;
+    margin-top: 0;
 }
 
-h3 {
-    text-align: center;
-    background-color: #4f77a1;
-    color: #fff; 
-    padding: 10px; 
-    margin-top: 0; 
-}
-
-/* Estilos del footer */
 footer {
     background-color: #007bff;
     color: #fff;
@@ -32,25 +23,24 @@ footer {
     width: 100%;
 }
 
-/* Contenedor de Sitios de Interés */
 .sitio {
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid #007bff;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color:  #a7d5fa;
-    color: #fff;
+    background-color: #fff;
+    color: #333;
 }
 
 .sitio h2 {
     font-size: 24px;
     margin-bottom: 8px;
-    color: #fff;
     background-color: #007bff;
     padding: 10px;
+    color: #fff;
 }
 
 .sitio img {
@@ -65,11 +55,11 @@ footer {
 }
 
 .atractivo {
-    border: 1px solid #eee;
+    border: 1px solid #007bff;
     padding: 10px;
     margin-top: 10px;
     border-radius: 8px;
-    background-color: #aedbff;
+    background-color: #fff;
     flex: 1;
     margin-right: 10px;
 }
