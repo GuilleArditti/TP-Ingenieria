@@ -1,0 +1,106 @@
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        section {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 5px;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        /* Estilos de enlaces */
+        a {
+            color: #007acc;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Estilos del footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .cotizacion {
+            position: fixed;
+            background-color: #b6d7ee;
+            color: rgb(153, 255, 0);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        #title{
+            text-decoration: none;
+            color:aliceblue;
+            font-size: 40px;
+        }
+
+        #video-background {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1000;
+          }
+
+          #container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #ffffff35;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #container p  {
+            color: #fff;
+        }
+        #container h1, #container h2, #container h3{
+            color: #333;
+        }
+
+        #container p {
+            line-height: 1.6;
+        }
+
+        #discover, #plan, #community, #experience {
+            margin-bottom: 30px;
+        }

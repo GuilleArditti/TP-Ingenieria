@@ -5,20 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal Turístico</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./CSS/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
+    <video id="video-background" autoplay muted loop>
+        <source src="./Images/tripvideo.mp4" type="video/mp4">
+    </video>
+
     <header>
-        <h1>Portal Turístico</h1>
+        <a id="title" href="index.html">Portal Turístico</a>
         <nav>
             <ul>
-                <li><a href="#sitios_interes">Sitios de Interés</a></li>
-                <li><a href="#centros_asistencia">Centros y Móviles de Asistencia</a></li>
-                <li><a href="#aviso_producto">Aviso de Productos</a></li>
-                <li><a href="#busqueda_comercios">Búsqueda de Comercios</a></li>
+                <li><a href="sitiosInteres-Atractivos.html">Sitios de Interés</a></li>
+                <li><a href="serviciosMedicos.html">Centros y Móviles de Asistencia</a></li>
+                <li><a href="visualizarAvisos.html">Aviso de Productos</a></li>
+                <li><a href="comercios.html">Búsqueda de Comercios</a></li>
             </ul>
             <!-- Agregar un botón para abrir el modal -->
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#avisoModal">
@@ -28,33 +32,32 @@
         </nav>
     </header>
 
-    <section id="sitios_interes">
-        <h2><a href="sitiosInteres-Atractivos.html">Consulta de Sitios de Interés y Atractivos Turísticos</a></h2>
-        <!-- Contenido de la funcionalidad -->
-    </section>
+    <div id="container">
+        <h1>Bienvenido al Portal Turístico</h1>
 
-    <section id="centros_asistencia">
-        <h2><a href="serviciosMedicos.html">Consulta de Centros y Móviles de Asistencia</a></h2>
-        <!-- Contenido de la funcionalidad -->
-    </section>
+        <div id="discover">
+            <h2>Descubre y Disfruta</h2>
+            <p>Mantente actualizado sobre los eventos locales, lugares emblemáticos y servicios que ofrecemos para hacer tu visita inolvidable.</p>
+        </div>
 
-    <section id="aviso_producto">
-        <h2><a href="visualizarAvisos.html">Consulta de Avisos</a></h2>
-        <!-- Contenido de la funcionalidad -->
-    </section>
+        <div id="plan">
+            <h2>Planifica tu Visita</h2>
+            <p>Explora nuestro mapa interactivo, descubre la oferta de comerciantes locales y encuentra todo lo que necesitas para planificar tu estancia.</p>
+        </div>
 
-    <section id="busqueda_comercios">
-        <h2><a href="comercios.html">Consulta de Comercios</a></h2>
-        <!-- Contenido de la funcionalidad -->
-    </section>
+        <div id="community">
+            <h2>Únete a la Comunidad</h2>
+            <p>Forma parte de nuestra comunidad. Descubre las ofertas y novedades de comerciantes locales, y disfruta de una experiencia única.</p>
+        </div>
 
-    <section id="consulta_productos">
-        <h2>Publicar Aviso</h2>
-        <!-- Contenido de la funcionalidad -->
-    </section>
+        <div id="experience">
+            <h2>Tu Experiencia, Nuestra Prioridad</h2>
+            <p>Estamos aquí para hacer que tu estadía sea inolvidable!</p>
+            <p>Si necesitas asistencia, no dudes en contactarnos.</p>
+        </div>
+    </div>
 
-    <div class="cotizacion">Dolar: $930</div>
-
+    
     <footer>
         <p>&copy; 2023 Portal Turístico</p>
     </footer>

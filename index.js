@@ -55,5 +55,3 @@ async function sugerirPrecio() {
         throw error;
     }
 }
-
-
