@@ -7,8 +7,7 @@
     <link rel="stylesheet" type="text/css" href="CSS/visualizarAvisos.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <link rel="stylesheet" href="./CSS/style.css">
-
-
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Visualizar Avisos</title>
 </head>
 
@@ -27,6 +26,7 @@
             
         </nav>
     </header>
+    
     <h1>Avisos</h1>
 
     <label for="filtroComercio">Filtrar por Comercio:</label>
@@ -37,7 +37,11 @@
     <select id="filtroCategoria">
     </select>
 
-    <div id="avisos-container"></div>
+    <div id="avisos-container">
+        <div id="spinner" style="display: none;">
+            <i class="fas fa-spinner fa-spin"></i> Cargando...
+        </div>
+    </div>
 
     <div id="detalles-comercio"></div>
 
