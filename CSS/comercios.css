@@ -7,14 +7,14 @@ body {
 
 h1 {
     text-align: center;
-    background-color: #007bff;
+    background-color: #007acc;
     color: #fff;
     padding: 10px;
     margin-top: 0;
 }
 
 .comercio {
-    border: 1px solid #007bff;
+    border: 1px solid #007acc;
     border-radius: 8px;
     margin-bottom: 20px;
     display: flex;
@@ -37,7 +37,7 @@ h1 {
     position: absolute; /* Nueva línea agregada */
     top: 0; /* Nueva línea agregada */
     right: 0; /* Nueva línea agregada */
-    border-left: 1px solid #007bff;
+    border-left: 1px solid #007acc;
     padding: 10px;
 }
 

@@ -9,7 +9,7 @@
 
 /* Estilo para cada elemento de aviso */
 .item {
-    border: 2px solid #007bff;
+    border: 2px solid #007acc;
     border-radius: 10px;
     margin: 10px;
     padding: 15px;
@@ -22,7 +22,7 @@
 
 /* Estilo para el título de cada aviso */
 .item p strong {
-    color: #007bff;
+    color: #007acc;
 }
 
 /* Estilo para las imágenes de productos */
@@ -44,7 +44,7 @@
 
 h1 {
     text-align: center;
-    background-color: #007bff;
+    background-color: #007acc;
     color: #fff;
     padding: 10px;
     margin-top: 0;
@@ -52,7 +52,7 @@ h1 {
 
 /* Estilo para el botón "Ver Comercio" */
 .ver-comercio-btn {
-    background-color: #007bff;
+    background-color: #007acc;
     color: #fff;
     border: none;
     padding: 8px 16px;
@@ -67,7 +67,7 @@ h1 {
 
 /* Estilo para los detalles del comercio */
 #detalles-comercio {
-    border: 2px solid #007bff;
+    border: 2px solid #007acc;
     border-radius: 10px;
     margin: 10px;
     padding: 15px;
@@ -84,7 +84,7 @@ h1 {
 }
 
 #detalles-comercio button {
-    background-color: #007bff;
+    background-color: #007acc;
     color: #fff;
     border: none;
     padding: 8px 16px;

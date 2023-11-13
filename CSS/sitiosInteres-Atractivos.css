@@ -7,14 +7,14 @@ body {
 
 h2, h3 {
     text-align: center;
-    background-color: #007bff;
+    background-color: #007acc;
     color: #fff;
     padding: 10px;
     margin-top: 0;
 }
 
 footer {
-    background-color: #007bff;
+    background-color: #007acc;
     color: #fff;
     text-align: center;
     padding: 10px;
@@ -27,7 +27,7 @@ footer {
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
-    border: 1px solid #007bff;
+    border: 1px solid #007acc;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -38,7 +38,7 @@ footer {
 .sitio h2 {
     font-size: 24px;
     margin-bottom: 8px;
-    background-color: #007bff;
+    background-color: #007acc;
     padding: 10px;
     color: #fff;
 }
@@ -55,7 +55,7 @@ footer {
 }
 
 .atractivo {
-    border: 1px solid #007bff;
+    border: 1px solid #007acc;
     padding: 10px;
     margin-top: 10px;
     border-radius: 8px;
@@ -67,7 +67,7 @@ footer {
 .atractivo h4 {
     font-size: 18px;
     margin-bottom: 8px;
-    color: #007bff;
+    color: #007acc;
 }
 
 .atractivo p {

@@ -37,8 +37,8 @@
         "nombre": "Pizzería La Rústica",
         "direccion": "Calle Moreno 321, Bariloche",
         "telefono": "+54 294 3337890",
-        "coordenadaX": -41.131234,
-        "coordenadaY": -71.312345,
+        "coordenadaX": -41.138765,
+        "coordenadaY": -71.325688,
         "foto": "Images/pizzeria.jpg",
         "horario": "Todos los días: 12:00 PM - 11:00 PM",
         "idCategoria": 2
