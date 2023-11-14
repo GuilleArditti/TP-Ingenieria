@@ -55,26 +55,3 @@ async function sugerirPrecio() {
         throw error;
     }
 }
-
-async function cotizarADolares(precioProducto) {
-    try {
-        const response = await axios.get('https://www.dolarsi.com/api/api.php?type=dolar');
-        const precioDolarOficial = parseFloat(response.data[0].casa.venta);
-        console.log('Precio Dólar Oficial:', precioDolarOficial);
-
-        const precioEnDolares = precioProducto / precioDolarOficial;
-        console.log('Precio en Dólares:', precioEnDolares);
-
-        return precioEnDolares;
-    } catch (error) {
-        console.error('Error al obtener el precio del dólar:', error);
-        return null;
-    }
-}
-
-// Ejemplo de uso
-const precioProductoEnPesos = 1000;
-cotizarADolares(precioProductoEnPesos)
-    .then((precioEnDolares) => {
-        console.log('Operación completada. Precio en dólares:', precioEnDolares);
-    });
