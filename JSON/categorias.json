@@ -5,10 +5,18 @@
     },
     {
         "id": 2,
-        "descripcion": "Comidas"
+        "descripcion": "Comida"
     },
     {
         "id": 3,
         "descripcion": "Librería"
+    },
+    {
+        "id": 4,
+        "descripcion": "Servicio"
+    },
+    {
+        "id": 5,
+        "descripcion": "Recuerdo"
     }
 ]

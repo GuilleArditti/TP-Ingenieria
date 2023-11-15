@@ -57,7 +57,6 @@
         </div>
     </div>
 
-    
     <footer>
         <p>&copy; 2023 Portal Turístico</p>
     </footer>
@@ -76,42 +75,41 @@
                 <div class="modal-body">
                     <form>
                         <div class="form-group">
-                            <label for="nombre">Numero de identificacion de su comercio:</label><body> 
-                            <input type="text" class="form-control" id="nro-local" placeholder="Identificacion de su local">
+                            <label for="nro-local">Numero de identificacion de su comercio:</label><body> 
+                            <input type="text" class="form-control" id="nro-local" placeholder="Identificacion de su local" required>
                         </div>
                         <div class="form-group">
-                            <label for="tipo">Tipo de Publicación:</label>
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>----</option>
-                                <option value="1">Servicio</option>
-                                <option value="2">Articulo</option>
+                            <label for="tipo-de-publicacion">Tipo de Publicación:</label>
+                            <select class="form-select" id="tipo-de-publicacion" aria-label="Default select example">
+                                <option value="servicio">Servicio</option>
+                                <option value="articulo">Articulo</option>
                               </select>
                         </div>
                         <div class="form-group">
                             <label for="nombre">Nombre:</label><body>
                                 
-                            <input type="text" class="form-control" id="nombre" placeholder="Nombre del aviso">
+                            <input type="text" class="form-control" id="nombre" placeholder="Nombre del aviso" required>
                         </div>
                         <div class="form-group">
                             <label for="nombre">Restriccion:</label><body>
                                 
-                            <input type="text" class="form-control" id="restriccion" placeholder="Restriccion del servicio">
+                            <input type="text" class="form-control" id="restriccion" placeholder="Restriccion del servicio" required>
                         </div>
                         <div class="form-group">
                             <label for="nombre">Detalle:</label><body>
                                 
-                            <input type="text" class="form-control" id="nombre" placeholder="Detalle del producto">
+                            <input type="text" class="form-control" id="detalle" placeholder="Detalle del producto" required>
                         </div>
                         <div class="form-group">
-                            <label for="tipo">Categoria:</label>
-                            <select class="form-select" aria-label="Default select example">
+                            <label for="categorias">Categoria:</label>
+                            <select class="form-select" id="categorias" aria-label="Default select example">
                                 
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="imagen">Seleccionar imagen:</label>
                             <br>
-                            <input type="file" id="imagen" name="imagen" accept="image/*">
+                            <input type="file" id="imagen" name="imagen" accept="image/*" required>
                         </div>
                         <div class="form-group">
                             <label for="precio">Precio:</label>
@@ -121,11 +119,9 @@
                             <button type="button" class="btn btn-outline-info" id="btn-sugerir-precio" onclick="sugerirPrecio()" disabled>Sugerir precio</button>
                             <span id="txt-sugerir-precio"></span>
                         </div>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <button type="submit" class="btn btn-primary" id="publicarBtn">Publicar</button>
                     </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary" id="publicarBtn">Publicar</button>
                 </div>
             </div>
         </div>

@@ -57,7 +57,6 @@ $(document).ready(function () {
             const precioAvisoEnDolaresPromise = cotizarADolares(aviso.precio);
 
             return precioAvisoEnDolaresPromise.then(precioAvisoEnDolares => {
-                console.log(precioAvisoEnDolares);
 
                 return `<div class="item">
                         <p><strong>${producto.tipo.charAt(0).toUpperCase() + producto.tipo.slice(1)}</strong>: ${producto.nombre}</p>
@@ -99,10 +98,8 @@ $(document).ready(function () {
         try {
             const response = await axios.get('https://www.dolarsi.com/api/api.php?type=dolar');
             const precioDolarOficial = parseFloat(response.data[0].casa.venta);
-            console.log('Precio Dólar Oficial:', precioDolarOficial);
 
             const precioEnDolares = precioProducto / precioDolarOficial;
-            console.log('Precio en Dólares:', precioEnDolares);
 
             return precioEnDolares;
         } catch (error) {
