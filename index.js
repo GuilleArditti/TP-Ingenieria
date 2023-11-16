@@ -1,51 +1,44 @@
 // Cuando se hace clic en "Sugerir Precio", habilita el campo de sugerencia
 document.getElementById("precio").addEventListener("input", function () {
     document.getElementById("sugerirPrecio").value = "Sugerido: $" + (parseInt(this.value) + 10); // Ejemplo de sugerencia
-})
+});
 
-// Cuando se hace clic en "Publicar", muestra un mensaje de éxito
-/* document.getElementById("publicarBtn").addEventListener("click", function () {
-    alert("¡Aviso publicado!");
-    // Cierra el modal
-    $('#avisoModal').modal('hide');
-}) */
+// Cuando se hace clic en "Publicar", muestra un mensaje de éxito o indicación de campo incompleto
+document.getElementById("publicarBtn").addEventListener("click", function (event) {
+    event.preventDefault(); // Evita que el formulario se envíe por defecto
 
-document.addEventListener('DOMContentLoaded', function () {
-    var formulario = document.getElementById('miFormulario');
-    formulario.addEventListener('submit', function (event) {
-        event.preventDefault(); // Evita el envío del formulario
-
-        // Lógica para guardar el formulario en un archivo JSON
-        guardarAviso();
-    });
-
-    // Otras funciones y lógica de tu aplicación...
+    const validacion = validarCampos();
+    if (validacion.valido) {
+        alert("¡Aviso publicado!");
+        document.getElementById("mensaje-alerta").classList.add("alert-success");
+        // Cierra el modal
+        $('#avisoModal').modal('hide');
+    } else {
+        alert(`Por favor, completa el campo: ${validacion.campo}`);
+    }
 });
 
 document.getElementById("tipo-de-publicacion").addEventListener("change", function () {
-    habilitarCamposSegunTipoDeAviso()
-})
+    habilitarCamposSegunTipoDeAviso();
+});
 
+cargarComercios();
 habilitarCamposSegunTipoDeAviso();
 cargarCategorias();
 
-const btnSugerirPrecio = document.getElementById("btn-sugerir-precio")
+const btnSugerirPrecio = document.getElementById("btn-sugerir-precio");
 btnSugerirPrecio.addEventListener("mouseover", function () {
     const isNombreVacio = isInputVacio("nombre");
     if (isNombreVacio) {
-        btnSugerirPrecio.disabled = true
+        btnSugerirPrecio.disabled = true;
     } else {
-        btnSugerirPrecio.disabled = false
+        btnSugerirPrecio.disabled = false;
     }
-})
+});
 
 function isInputVacio(idInput) {
     const inputValue = document.getElementById(idInput).value;
-    if (inputValue == '') {
-        return true
-    } else {
-        return false
-    }
+    return inputValue.trim() === "";
 }
 
 async function getProducto(nombre) {
@@ -61,13 +54,12 @@ async function getProducto(nombre) {
 
 async function sugerirPrecio() {
     const nombreProducto = document.getElementById("nombre").value;
-    console.log("nombre producto", nombreProducto)
-    const precio = document.getElementById("txt-sugerir-precio")
+    const precio = document.getElementById("txt-sugerir-precio");
     try {
-        const productos = await getProducto(nombreProducto)
-        productos.sort((p1, p2) => p1.price - p2.price)
-        let precioSugerido = productos[1].price
-        precio.textContent = precioSugerido
+        const productos = await getProducto(nombreProducto);
+        productos.sort((p1, p2) => p1.price - p2.price);
+        let precioSugerido = productos[1].price;
+        precio.textContent = `Sugerido: $${precioSugerido}`;
     } catch (error) {
         console.error('Error en sugerirPrecio:', error);
         throw error;
@@ -82,11 +74,11 @@ function habilitarCamposSegunTipoDeAviso() {
     if (tipoPublicacion.value === "servicio") {
         restriccion.disabled = false;
         detalle.disabled = true;
-        detalle.value = ""
+        detalle.value = "";
     } else if (tipoPublicacion.value === "articulo") {
         restriccion.disabled = true;
         detalle.disabled = false;
-        restriccion.value = ""
+        restriccion.value = "";
     } else {
         restriccion.disabled = true;
         detalle.disabled = true;
@@ -95,61 +87,58 @@ function habilitarCamposSegunTipoDeAviso() {
 
 function cargarCategorias() {
     const jsonCategorias = './JSON/categorias.json';
-    let categoriaSelect = document.getElementById('categorias')
+    let categoriaSelect = document.getElementById('categorias');
     fetch(jsonCategorias)
-        .then(response => response.json())  // Parsear la respuesta como JSON
+        .then(response => response.json())
         .then(data => {
             data.forEach(categoria => {
-                let optionAux = document.createElement('option')
-                optionAux.value = categoria.id
-                optionAux.text = categoria.descripcion
-                categoriaSelect.appendChild(optionAux)
+                let optionAux = document.createElement('option');
+                optionAux.value = categoria.id;
+                optionAux.text = categoria.descripcion;
+                categoriaSelect.appendChild(optionAux);
             });
         })
         .catch(error => console.error('Error al cargar el archivo JSON:', error));
 }
 
-async function guardarAviso() {
+function cargarComercios() {
+    const jsonComercios = './JSON/comercios.json';
+    let comercioSelect = document.getElementById('nro-local');
 
-    var fechaHoy = new Date()
-    var fechaFormateada = fechaHoy.toISOString().split('T')[0]
-
-    const productosJSON = await obtenerJsonActual("productos.json")
-    const avisosJSON = await obtenerJsonActual("avisos.json")
-
-    let producto = {
-        id: productosJSON.length + 1,
-        nombre: document.getElementById('nombre').value,
-        detalle: document.getElementById('detalle').value,
-        foto: "Images/default-image.jpg",
-        caracteristica: document.getElementById('categorias').value,
-        idCategoria: document.getElementById('categorias').value,
-        tipo: document.getElementById('tipo-de-publicacion').value
-    }
-
-    let aviso = {
-        id: avisosJSON.length + 1,
-        fechaPublicacion: fechaFormateada(),
-        precio: document.getElementById('precio').value,
-        idProducto: productosJSON.length + 1,
-        idComercio: document.getElementById('nro-local').value
-    }
-
-    // Convierte el objeto a JSON
-    var jsonDatosFormulario = JSON.stringify(datosFormulario)
-
-    productosJSON.push(producto)
-    avisosJSON.push(aviso)
-    
+    fetch(jsonComercios)
+        .then(response => response.json())
+        .then(data => {
+            data.forEach(comercio => {
+                let optionAux = document.createElement('option');
+                optionAux.value = comercio.id;
+                optionAux.text = comercio.nombre;
+                comercioSelect.appendChild(optionAux);
+            });
+        })
+        .catch(error => console.error('Error al cargar el archivo JSON de comercios:', error));
 }
 
-async function obtenerJson(nombre) {
-    try {
-        const response = await fetch(nombre)
-        const data = await response.json()
-        return data
-    } catch (error) {
-        console.error('Error al obtener el JSON actual:', error)
-        return null
+function validarCampos() {
+    const tipoPublicacion = document.getElementById("tipo-de-publicacion").value;
+    const nombre = document.getElementById("nombre").value;
+
+    if (tipoPublicacion === "servicio") {
+        const restriccion = document.getElementById("restriccion").value;
+        return { valido: !camposVacios(tipoPublicacion, [nombre, restriccion]), campo: camposVacios(tipoPublicacion, [nombre, restriccion]) };
+    } else if (tipoPublicacion === "articulo") {
+        const detalle = document.getElementById("detalle").value;
+        return { valido: !camposVacios(tipoPublicacion, [nombre, detalle]), campo: camposVacios(tipoPublicacion, [nombre, detalle]) };
+    } else {
+        return { valido: false, campo: "" };
     }
 }
+
+function camposVacios(tipoPublicacion, campos) {
+    for (let i = 0; i < campos.length; i++) {
+        if (campos[i].trim() === "") {
+            return i === 0 ? "Nombre" : i === 1 && tipoPublicacion === "servicio" ? "Restricción" : i === 1 && tipoPublicacion === "articulo" ? "Detalle" : "";
+        }
+    }
+    return "";
+}
+

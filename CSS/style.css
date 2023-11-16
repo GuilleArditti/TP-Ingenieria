@@ -1,106 +1,214 @@
-        /* Estilos generales */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
 
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
 
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
+nav ul {
+    list-style: none;
+    padding: 0;
+}
 
-        nav li {
-            display: inline;
-            margin-right: 20px;
-        }
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
 
-        section {
-            background-color: #fff;
-            padding: 20px;
-            margin: 20px;
-            border-radius: 5px;
-        }
+section {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+}
 
-        h2 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
 
-        /* Estilos de enlaces */
-        a {
-            color: #007acc;
-            text-decoration: none;
-        }
+/* Estilos de enlaces */
+a {
+    color: #007acc;
+    text-decoration: none;
+}
 
-        a:hover {
-            text-decoration: underline;
-        }
+a:hover {
+    text-decoration: underline;
+}
 
-        /* Estilos del footer */
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
+/* Estilos del footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
 
-        .cotizacion {
-            position: fixed;
-            background-color: #b6d7ee;
-            color: rgb(153, 255, 0);
-            padding: 10px;
-            border-radius: 5px;
-        }
+.cotizacion {
+    position: fixed;
+    background-color: #b6d7ee;
+    color: rgb(153, 255, 0);
+    padding: 10px;
+    border-radius: 5px;
+}
 
-        #title{
-            text-decoration: none;
-            color:aliceblue;
-            font-size: 40px;
-        }
+#title {
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 40px;
+}
 
-        #video-background {
-            position: fixed;
-            right: 0;
-            bottom: 0;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            z-index: -1000;
-          }
+#video-background {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1000;
+}
 
-          #container {
-            max-width: 800px;
-            margin: 20px auto;
-            background-color: #ffffff35;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+#container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #ffffff35;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
-        #container p  {
-            color: #fff;
-        }
-        #container h1, #container h2, #container h3{
-            color: #333;
-        }
+#container p {
+    color: #fff;
+}
 
-        #container p {
-            line-height: 1.6;
-        }
+#container h1,
+#container h2,
+#container h3 {
+    color: #333;
+}
 
-        #discover, #plan, #community, #experience {
-            margin-bottom: 30px;
-        }
+#container p {
+    line-height: 1.6;
+}
+
+#discover,
+#plan,
+#community,
+#experience {
+    margin-bottom: 30px;
+}
+
+/* Estilos para el formulario */
+.modal-body form {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #007acc;
+    border-radius: 8px;
+}
+
+/* Estilos para el formulario */
+.modal-body form {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #007acc;
+    border-radius: 8px;
+}
+
+/* Estilos para los campos del formulario */
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Estilos para los botones del formulario */
+.btn-primary,
+.btn-secondary {
+    margin-right: 10px;
+    background-color: #007acc;
+    border: 1px solid #007acc;
+    border-radius: 4px;
+    color: #fff;
+}
+
+/* Estilos para los campos de entrada de texto y select */
+.form-control,
+.form-select {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #007acc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+/* Estilo para resaltar el menú desplegable cuando está abierto */
+.form-select:focus {
+    border-color: #007acc;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Estilo para las opciones del menú desplegable */
+.form-select option {
+    background-color: #007acc;
+    color: #fff;
+}
+
+/* Estilos para el botón de sugerir precio */
+#btn-sugerir-precio {
+    margin-top: 15px;
+    font-size: 16px;
+    background-color: #007acc;
+    border: 1px solid #007acc;
+    border-radius: 4px;
+    color: #fff;
+}
+
+/* Estilos para el mensaje de sugerir precio */
+#txt-sugerir-precio {
+    display: block;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #007acc;
+}
+
+/* Estilo para el botón de cerrar el modal */
+.close {
+    color: #007acc;
+}
+
+/* Estilos para los mensajes de éxito y error del formulario */
+.alert {
+    margin-top: 10px;
+    background-color: #007acc;
+    color: #fff;
+}
+
+/* Aplicar estilo de form-control a los campos de nombre, restricción, detalle y precio */
+#nombre,
+#restriccion,
+#detalle,
+#precio {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #007acc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
